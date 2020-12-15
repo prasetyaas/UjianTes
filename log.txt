@@ -1,0 +1,56 @@
+[2020-15-12:20:30:29] Action for login user
+
+[2020-15-12:20:30:31] Action for login user
+
+[2020-15-12:20:30:59] Action for login user
+
+[2020-15-12:20:31:14] Action for login user
+
+[2020-15-12:20:32:11] Action for login fail
+
+[2020-15-12:20:36:22] Action for login fail
+
+[2020-15-12:20:54:53] Action for login fail
+
+[2020-15-12:20:54:58] Action for login fail
+
+[2020-15-12:20:55:05] Action for login fail
+
+[2020-15-12:20:55:15] Action for login fail
+
+[2020-15-12:20:55:22] Action for login fail
+
+[2020-15-12:20:55:30] Action for login fail
+
+[2020-15-12:20:55:33] Action for login fail
+
+[2020-15-12:20:57:49] Action for login fail
+
+[2020-15-12:20:57:54] Action for transaksi gagal
+
+[2020-15-12:20:58:16] Action for transaksi gagal
+
+[2020-15-12:20:59:22] Action for login fail
+
+[2020-15-12:21:00:29] Action for Gagal Menambah Makanan
+
+[2020-15-12:21:02:17] Action for Gagal Menambah Barang
+
+[2020-15-12:21:02:59] Action for Sukses Menambah Barang
+
+[2020-15-12:21:06:53] Action for Sukses Memasuki Detail Transaksi
+
+[2020-15-12:21:07:00] Action for login fail
+
+[2020-15-12:21:07:05] Action for Sukses Memasuki Menu Transaksi
+
+[2020-15-12:21:07:06] Action for Sukses Transaksi
+
+[2020-15-12:21:07:12] Action for Sukses Transaksi
+
+[2020-15-12:21:07:18] Action for Sukses Transaksi
+
+[2020-15-12:21:07:22] Action for Sukses Memasuki Menu Transaksi
+
+[2020-15-12:21:07:40] Action for login fail
+
