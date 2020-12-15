@@ -1,14 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 4.7.7
+-- version 5.0.4
 -- https://www.phpmyadmin.net/
 --
--- Host: localhost
--- Generation Time: Jan 22, 2018 at 08:44 AM
--- Server version: 5.6.26
--- PHP Version: 5.6.12
+-- Host: 127.0.0.1
+-- Generation Time: Dec 15, 2020 at 09:27 PM
+-- Server version: 10.4.17-MariaDB
+-- PHP Version: 7.4.13
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -19,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `imk`
+-- Database: `2`
 --
 
 -- --------------------------------------------------------
@@ -35,7 +34,7 @@ CREATE TABLE `barang` (
   `stok` int(11) NOT NULL,
   `harga_beli` varchar(100) NOT NULL,
   `harga_jual` varchar(100) NOT NULL,
-  `date_added` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+  `date_added` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
@@ -43,14 +42,13 @@ CREATE TABLE `barang` (
 --
 
 INSERT INTO `barang` (`id_barang`, `nama_barang`, `id_kategori`, `stok`, `harga_beli`, `harga_jual`, `date_added`) VALUES
-(6, 'keyboard razer', 8, 27, '200000', '230000', '2018-01-15 06:56:56'),
-(7, 'pakaian anak size M', 3, 30, '120000', '140000', '2018-01-11 10:32:34'),
-(8, 'Vans Old School Mono Black White Pria', 2, 24, '400000', '450000', '2018-01-15 06:57:03'),
-(9, 'Rexus Headset Gaming Vonix F26', 8, 20, '90000', '120000', '2018-01-11 10:32:27'),
-(10, 'Ripcurl detroit chrono', 4, 37, '130000', '150000', '2018-01-15 01:13:54'),
-(11, 'tic tac', 12, 40, '600', '1000', '2017-12-18 03:23:33'),
-(12, 'Xiaomi Mi4c red White  2/16 GB', 5, 39, '1100000', '1400000', '2018-01-15 01:34:36'),
-(13, 'Sennheiser HD 202', 13, 20, '400000', '440000', '2018-01-15 00:42:27');
+(15, 'Pizza', 16, 19, '15000', '20000', '2020-12-15 20:22:44'),
+(16, 'Burger', 16, 28, '17000', '23000', '2020-12-15 20:07:17'),
+(17, 'Lemon Tea', 17, 25, '5000', '7000', '2020-12-15 19:58:02'),
+(20, 'Ice Cream', 18, 27, '6000', '8000', '2020-12-15 19:58:09'),
+(21, 'Cappucino', 17, 575, '6000', '10000', '2020-12-15 20:22:49'),
+(22, 'Lemon Squash', 17, 80, '8000', '12000', '2020-12-15 20:02:36'),
+(23, 'Nasi Goreng', 16, 100, '8000', '15000', '2020-12-15 20:03:14');
 
 -- --------------------------------------------------------
 
@@ -68,16 +66,9 @@ CREATE TABLE `kategori` (
 --
 
 INSERT INTO `kategori` (`id_kategori`, `nama_kategori`) VALUES
-(2, 'Sepatu'),
-(3, 'Pakaian'),
-(4, 'Jam Tangan'),
-(5, 'Handphone'),
-(6, 'Elektronik'),
-(7, 'Kesehatan'),
-(8, 'Gaming'),
-(11, 'Tas'),
-(12, 'Makanan'),
-(13, 'Audio');
+(16, 'Makanan'),
+(17, 'Minuman'),
+(18, 'Dessert');
 
 -- --------------------------------------------------------
 
@@ -99,10 +90,22 @@ CREATE TABLE `sub_transaksi` (
 --
 
 INSERT INTO `sub_transaksi` (`id_subtransaksi`, `id_barang`, `id_transaksi`, `jumlah_beli`, `total_harga`, `no_invoice`) VALUES
-(17, 8, 14, 1, '450000', '15/AF/2/18/02/18/21'),
-(18, 6, 14, 2, '460000', '15/AF/2/18/02/18/21'),
-(19, 6, 15, 2, '460000', '15/AF/4/18/07/57/25'),
-(20, 8, 15, 1, '450000', '15/AF/4/18/07/57/25');
+(12, 20, 22, 5, '40000', '15/AF/5/20/08/20/03'),
+(13, 16, 23, 40, '920000', '15/AF/5/20/08/20/36'),
+(14, 15, 24, 2, '40000', '15/AF/5/20/08/31/27'),
+(15, 17, 25, 4, '28000', '15/AF/5/20/08/31/36'),
+(16, 15, 26, 5, '100000', '15/AF/5/20/08/43/53'),
+(17, 15, 27, 8, '160000', '15/AF/5/20/08/45/49'),
+(18, 15, 28, 12, '240000', '15/AF/5/20/08/46/24'),
+(19, 15, 29, 8, '160000', '15/AF/5/20/08/49/13'),
+(20, 15, 30, 4, '80000', '15/AF/5/20/08/49/53'),
+(21, 16, 31, 10, '230000', '15/AF/5/20/08/55/28'),
+(22, 15, 32, 1, '20000', '15/AF/5/20/08/58/14'),
+(23, 17, 32, 1, '7000', '15/AF/5/20/08/58/14'),
+(24, 16, 32, 1, '23000', '15/AF/5/20/08/58/14'),
+(25, 20, 32, 1, '8000', '15/AF/5/20/08/58/14'),
+(26, 21, 33, 5, '50000', '15/AF/5/20/09/07/21'),
+(27, 16, 33, 5, '115000', '15/AF/5/20/09/07/21');
 
 -- --------------------------------------------------------
 
@@ -118,6 +121,14 @@ CREATE TABLE `tempo` (
   `trx` varchar(10) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Dumping data for table `tempo`
+--
+
+INSERT INTO `tempo` (`id_subtransaksi`, `id_barang`, `jumlah_beli`, `total_harga`, `trx`) VALUES
+(72, 15, 1, '20000', '15/AF/2/20'),
+(73, 21, 20, '200000', '15/AF/2/20');
+
 -- --------------------------------------------------------
 
 --
@@ -126,20 +137,30 @@ CREATE TABLE `tempo` (
 
 CREATE TABLE `transaksi` (
   `id_transaksi` int(11) NOT NULL,
-  `tgl_transaksi` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `tgl_transaksi` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
   `kode_kasir` int(11) NOT NULL,
   `total_bayar` varchar(20) NOT NULL,
   `no_invoice` varchar(20) NOT NULL,
-  `nama_pembeli` varchar(20) NOT NULL
+  `nomor_meja` int(5) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `transaksi`
 --
 
-INSERT INTO `transaksi` (`id_transaksi`, `tgl_transaksi`, `kode_kasir`, `total_bayar`, `no_invoice`, `nama_pembeli`) VALUES
-(14, '2018-01-15 01:18:21', 2, '910000', '15/AF/2/18/02/18/21', 'athoul muwafiq'),
-(15, '2018-01-15 06:57:25', 4, '910000', '15/AF/4/18/07/57/25', 'afiq');
+INSERT INTO `transaksi` (`id_transaksi`, `tgl_transaksi`, `kode_kasir`, `total_bayar`, `no_invoice`, `nomor_meja`) VALUES
+(22, '2020-12-15 19:20:03', 5, '40000', '15/AF/5/20/08/20/03', 12),
+(23, '2020-12-15 19:20:36', 5, '920000', '15/AF/5/20/08/20/36', 5),
+(24, '2020-12-15 19:31:27', 5, '40000', '15/AF/5/20/08/31/27', 4),
+(25, '2020-12-15 19:31:36', 5, '28000', '15/AF/5/20/08/31/36', 10),
+(26, '2020-12-15 19:43:53', 5, '100000', '15/AF/5/20/08/43/53', 7),
+(27, '2020-12-15 19:45:49', 5, '160000', '15/AF/5/20/08/45/49', 22),
+(28, '2020-12-15 19:46:24', 5, '240000', '15/AF/5/20/08/46/24', 8),
+(29, '2020-12-15 19:49:13', 5, '160000', '15/AF/5/20/08/49/13', 1),
+(30, '2020-12-15 19:49:53', 5, '80000', '15/AF/5/20/08/49/53', 5),
+(31, '2020-12-15 19:55:28', 5, '230000', '15/AF/5/20/08/55/28', 7),
+(32, '2020-12-15 19:58:14', 5, '58000', '15/AF/5/20/08/58/14', 9),
+(33, '2020-12-15 20:07:21', 5, '165000', '15/AF/5/20/09/07/21', 20);
 
 -- --------------------------------------------------------
 
@@ -152,7 +173,7 @@ CREATE TABLE `user` (
   `username` varchar(100) NOT NULL,
   `password` text NOT NULL,
   `status` int(11) NOT NULL,
-  `date_created` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+  `date_created` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
@@ -160,10 +181,9 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`id`, `username`, `password`, `status`, `date_created`) VALUES
-(1, 'admin', 'd033e22ae348aeb5660fc2140aec35850c4da997', 1, '2017-12-12 00:44:45'),
-(2, 'kasir1', '7110eda4d09e062aa5e4a390b0a572ac0d2c0220', 2, '2017-12-17 09:52:27'),
-(3, 'kasir2', '7110eda4d09e062aa5e4a390b0a572ac0d2c0220', 2, '2017-12-21 10:07:51'),
-(4, 'kasir3', '7110eda4d09e062aa5e4a390b0a572ac0d2c0220', 2, '2018-01-13 15:53:48');
+(1, 'admin', 'd033e22ae348aeb5660fc2140aec35850c4da997', 1, '2017-12-11 17:44:45'),
+(5, 'Kasir', 'fb5ff76f1668a8d36b4f5797bfa77f986bc8a356', 2, '2020-12-15 19:16:09'),
+(6, 'Pelayan', '6b0e6a33926a9f113b04017a55600278df78973a', 2, '2020-12-15 19:18:33');
 
 --
 -- Indexes for dumped tables
@@ -173,7 +193,8 @@ INSERT INTO `user` (`id`, `username`, `password`, `status`, `date_created`) VALU
 -- Indexes for table `barang`
 --
 ALTER TABLE `barang`
-  ADD PRIMARY KEY (`id_barang`);
+  ADD PRIMARY KEY (`id_barang`),
+  ADD KEY `id_kategori` (`id_kategori`);
 
 --
 -- Indexes for table `kategori`
@@ -185,13 +206,17 @@ ALTER TABLE `kategori`
 -- Indexes for table `sub_transaksi`
 --
 ALTER TABLE `sub_transaksi`
-  ADD PRIMARY KEY (`id_subtransaksi`);
+  ADD PRIMARY KEY (`id_subtransaksi`),
+  ADD KEY `id_barang` (`id_barang`),
+  ADD KEY `id_transaksi` (`id_transaksi`);
 
 --
 -- Indexes for table `tempo`
 --
 ALTER TABLE `tempo`
-  ADD PRIMARY KEY (`id_subtransaksi`);
+  ADD UNIQUE KEY `id_subtransaksi` (`id_subtransaksi`),
+  ADD KEY `id_barang` (`id_barang`),
+  ADD KEY `jumlah_beli` (`jumlah_beli`);
 
 --
 -- Indexes for table `transaksi`
@@ -213,37 +238,37 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `barang`
 --
 ALTER TABLE `barang`
-  MODIFY `id_barang` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `id_barang` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
 
 --
 -- AUTO_INCREMENT for table `kategori`
 --
 ALTER TABLE `kategori`
-  MODIFY `id_kategori` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `id_kategori` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 
 --
 -- AUTO_INCREMENT for table `sub_transaksi`
 --
 ALTER TABLE `sub_transaksi`
-  MODIFY `id_subtransaksi` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+  MODIFY `id_subtransaksi` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
 
 --
 -- AUTO_INCREMENT for table `tempo`
 --
 ALTER TABLE `tempo`
-  MODIFY `id_subtransaksi` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_subtransaksi` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=74;
 
 --
 -- AUTO_INCREMENT for table `transaksi`
 --
 ALTER TABLE `transaksi`
-  MODIFY `id_transaksi` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `id_transaksi` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=34;
 
 --
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
